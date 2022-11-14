@@ -190,6 +190,14 @@ function submitForm(selected) {
 // Post data to GSheets
 function postFormData() {
 
+    // Change submission button
+    let submitButton = document.querySelector(".js-form-submit");
+    if (submitButton.classList.contains("form-submitted")) {
+        return;  // do not submit again.
+    }
+
+    submitButton.textContent = "Submitting ...";
+    
     // Collect data
     // Handle hResponse since it's optional and depends on RSVP.
     let h = document.querySelector(".js-form-hotel.is_active");
@@ -212,10 +220,10 @@ function postFormData() {
         },
         body: JSON.stringify(data),
     }).then((result) => {
-        console.log("Form submitted")
+        console.log("Form submitted.")
 
-        // Change submission to 'correct'
-        let submitButton = document.querySelector(".js-form-submit");
-        submitButton.textContent = "Form Submitted";
+        // Change submission button style
+        submitButton.textContent = "Success!";
+        submitButton.classList.add("form-submitted");
     });
 }
