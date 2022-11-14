@@ -187,60 +187,35 @@ function submitForm(selected) {
     postFormData()
 }
 
-// Dynamically create a form and submit it.
-// Lazy way of creating a POST request.
+// Post data to GSheets
 function postFormData() {
-
-    const form = document.createElement('form');
-    form.method = "POST";
-    form.action = "https://script.google.com/macros/s/AKfycbx0KGffwNbOkFtXTyrpZrIFKLNMUgceKTIzu6F8I1k/dev";
-    form.type = "hidden";
 
     // Collect data
     // Handle hResponse since it's optional and depends on RSVP.
     let h = document.querySelector(".js-form-hotel.is_active");
     let hResponse = h ? h.dataset.value : "no"
 
-    let params = {
-        name: document.querySelector(".js-form-name").value,
-        rsvp: document.querySelector(".js-form-rsvp.is_active").dataset.value,
-        extra_guests: document.querySelector(".js-form-extra-guest-names").value,
-        diet: document.querySelector(".js-form-extra-diet").value,
-        hotel: hResponse,
-        hotel_nights: document.querySelector(".js-form-hotel-nights").value,
-        hotel_checkin: document.querySelector(".js-form-hotel-checkin").value,
+    let data = {
+        Name: document.querySelector(".js-form-name").value,
+        RSVP: document.querySelector(".js-form-rsvp.is_active").dataset.value,
+        ExtraGuests: document.querySelector(".js-form-extra-guest-names").value,
+        DietaryRestrictions: document.querySelector(".js-form-extra-diet").value,
+        WantsHotel: hResponse,
+        NumNights: document.querySelector(".js-form-hotel-nights").value,
+        CheckinDate: document.querySelector(".js-form-hotel-checkin").value,
     };
-
-    // Create form
-    for (const key in params) {
-      if (params.hasOwnProperty(key)) {
-        const hiddenField = document.createElement('input');
-        hiddenField.type = 'hidden';
-        hiddenField.name = key;
-        hiddenField.value = params[key];
-  
-        form.appendChild(hiddenField);
-      }
-    }
-  
-    document.body.appendChild(form);
     
-    const data = new FormData(form);
-    const action = form.action;
-    fetch(action, {
+    fetch('https://api.sheetmonkey.io/form/ev6A9uu1inqfwJgqKVQtut', {
         method: 'POST',
-        body: data,
-    })
-    .then(() => {
-        console.log("Done?")
-    })
-  
-    // form.submit();
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then((result) => {
+        console.log("Form submitted")
 
-    // Change submission to 'correct'
-    let submitButton = document.querySelector(".js-form-submit");
-    submitButton.textContent = "Form Submitted";
+        // Change submission to 'correct'
+        let submitButton = document.querySelector(".js-form-submit");
+        submitButton.textContent = "Form Submitted";
+    });
 }
-
-window.addEventListener("load", function() {
-});
