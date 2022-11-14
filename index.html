@@ -6,20 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
   <title>L + J</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="">
-  <meta property="og:description" content="">
-  <meta property="og:image" content="">
+  <meta name="description" content="Wedding website">
+  <meta name="author" content="João Rodrigues">
 
   <!-- Google fonts-->
   <link href="https://fonts.googleapis.com" rel="preconnect" >
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;300;400;500&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@100;200;400&display=swap" rel="stylesheet"> 
   
   <!-- Favicon -->
   <link type="image/x-icon" href="static/img/favicon_white.png" rel="icon" >
@@ -224,6 +218,8 @@
       <div class="js-form">
         <h5>Your Name</h5>
         <input class="js-form-name" type="text" placeholder="Full Name">
+        <h5>Your Email</h5>
+        <input class="js-form-email" type="text" placeholder="">
         <h5>Your Response</h5>
         <div class="js-form-rsvp-option">
           <button class="js-form-rsvp" data-value="yes" onclick="selectRSVPOption(this);">Yes, I'm all in!</button>
@@ -231,12 +227,13 @@
         </div>
         <div class="js-form-rsvp-extras">
 
+          <h5>Other Guests in Your Party</h5>
+          <input class="js-form-extra-guest-names" type="text" placeholder="e.g. DotCo, ZipFile, ...">
+
           <h5>Number of Adults in Your Party</h5>
-          <input class="js-form-extra-guest-adults" type="text" placeholder="">
+          <input class="js-form-extra-guest-adults" type="text" placeholder="e.g. 2">
           <h5>Number of Children in Your Party</h5>
-          <input class="js-form-extra-guest-children" type="text" placeholder="">
-          <h5>Additional Guests in Your Party</h5>
-          <input class="js-form-extra-guest-names" type="text" placeholder="List names of others in your party (comma separated)">          
+          <input class="js-form-extra-guest-children" type="text" placeholder="e.g. 1">
 
           <h5>Dietary Restrictions</h5>
           <input class="js-form-extra-diet" type="text" placeholder="List any dietary restrictions">

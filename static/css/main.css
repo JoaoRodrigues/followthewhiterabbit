@@ -207,7 +207,7 @@ body {
   padding: 0;
   background-image: url("../img/village_watercolor_2550x1440.webp");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 90vh;
   background-position: center;
   position: relative;
 }
@@ -374,7 +374,7 @@ body {
   display: inline-block;
   margin-top: 2rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.5rm;
   color: #11223F;
   text-transform: uppercase;
@@ -562,7 +562,7 @@ body {
 
 .js-form h5 {
   margin: 4rem 0 2rem;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.5rem;
   letter-spacing: 0.5rem;
   text-transform: uppercase;

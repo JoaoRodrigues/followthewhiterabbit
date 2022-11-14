@@ -213,16 +213,17 @@ function postFormData() {
 
     let data = {
         Name: document.querySelector(".js-form-name").value,
+        Email: document.querySelector(".js-form-email").value,
         RSVP: document.querySelector(".js-form-rsvp.is_active").dataset.value,
         ExtraGuests: document.querySelector(".js-form-extra-guest-names").value,
+        NumAdults: document.querySelector(".js-form-extra-guest-adults").value,
+        NumChildren: document.querySelector(".js-form-extra-guest-children").value,
         DietaryRestrictions: document.querySelector(".js-form-extra-diet").value,
         WantsHotel: hResponse,
         NumNights: document.querySelector(".js-form-hotel-nights").value,
         CheckinDate: document.querySelector(".js-form-hotel-checkin").value,
     };
     
-    return; // debug
-
     fetch('https://api.sheetmonkey.io/form/ev6A9uu1inqfwJgqKVQtut', {
         method: 'POST',
         headers: {
