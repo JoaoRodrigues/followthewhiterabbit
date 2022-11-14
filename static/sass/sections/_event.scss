@@ -1,0 +1,70 @@
+#event {
+  padding: 0;
+  margin: 0 10vw;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: inherit;
+  column-gap: 2vw;
+
+  max-width: 90vw;
+}
+
+@media screen and (max-width: $mobile) {
+  #event {
+    row-gap: 5vw;
+  }
+}
+
+#event {
+  .square-text-container {
+    flex: 1;
+    // Set a minimum width to allow items to pack on a full screen
+    min-width: 22vw; // roughly (90-(10*2)-(2*2)) / 3
+
+    text-align: center; // center elements
+
+    border: 1px solid $highlight_color;
+    padding: 2rem;
+  }
+
+  .square-text-container img {
+    max-width: 100%;
+  }
+
+  .square-text-container h1 {
+    font-size: 4rem;
+    font-weight: 400;
+
+    margin-bottom: 2rem;
+  }
+
+  .square-text-container h2 {
+    font-size: 2.5rem;
+    font-weight: 200;
+    color: $highlight_color;
+    text-transform: uppercase;
+    
+    margin-bottom: 2rem;
+  }
+
+  .square-text-container span {
+    font-size: 2.5rem;
+    font-weight: 100; 
+    line-height: 1.4;
+
+    text-align: left;
+  }
+
+  .postscript {
+    margin-top: 5rem;
+    max-width: 25vw;
+
+    font-size: 2.5rem;
+    font-weight: 100; 
+    line-height: 1.4;
+    
+    text-align: center;
+  }
+}

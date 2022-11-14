@@ -1,0 +1,96 @@
+.js-form {
+  margin: 0 auto;
+  width: 25vw;
+}
+
+.js-form h5 {
+  margin: 4rem 0 2rem;
+
+  font-weight: 300;
+  font-size: 1.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.js-form input {
+  width: 100%;
+  font-size: 1.5rem;
+  box-sizing: border-box;
+
+  border: none;
+  padding: 2rem;
+}
+
+.js-form button {
+  display: inline-block;
+  box-sizing: border-box;
+
+  border: 1px solid $font_color_base;
+
+  background-color: $bg_color_base;
+  color: $font_color_base;
+  
+  padding: 1.5rem 3rem;
+  
+  text-align: center;
+  text-decoration: none;
+
+  font-size: 1.5rem;
+  margin: 1rem 0.5rem;
+  cursor: pointer;
+
+  transition: 0.6s;
+}
+
+.js-form .js-form-hotel[data-value="yes"].is_active,
+.js-form .js-form-hotel[data-value="yes"]:hover,
+.js-form .js-form-rsvp[data-value="yes"].is_active,
+.js-form .js-form-rsvp[data-value="yes"]:hover {
+  border: 1px solid #4CAF50;
+  color: white;
+  background-color: #4CAF50;
+}
+
+.js-form .js-form-hotel[data-value="no"].is_active,
+.js-form .js-form-hotel[data-value="no"]:hover,
+.js-form .js-form-rsvp[data-value="no"].is_active,
+.js-form .js-form-rsvp[data-value="no"]:hover {
+  border: 1px solid #BE513D;
+  color: white;
+  background-color: #BE513D;
+}
+
+.js-form .js-form-hotel-extras,
+.js-form .js-form-rsvp-extras {
+  display: none;
+}
+
+.js-form .js-form-hotel-extras.is_active,
+.js-form .js-form-rsvp-extras.is_active {
+  display: block;
+}
+
+.js-form-hotel-extras span {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.js-form .js-form-submit {
+  width: 100%;
+  
+  margin: 0;
+  margin-top: 2.5rem;
+  padding: 2rem;
+  
+  border: none;
+
+  background-color: $highlight_color;
+  color: white;
+  
+  opacity: 1.0;
+}
+
+.wrong_input {
+  border: 2px solid #BE513D !important;
+}

@@ -1,0 +1,62 @@
+#venue {
+  padding: 0;
+  margin: 0 10vw;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.venue-text {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-top: 5vh;
+  max-width: 50%;
+}
+
+#venue span {
+  font-size: 3rem;
+  font-weight: 100; 
+  line-height: 1.6;
+
+  text-align: left;
+}
+
+.venue-text span:not(:first-child) {
+  margin-top: 2rem;
+}
+
+#venue .button-map {
+  display: inline-block;
+  margin-top: 2rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  
+  letter-spacing: 0.5rm;
+  color: $font_color_base;
+
+  text-transform: uppercase;
+  text-decoration: none;
+
+  padding: 2rem 10rem;
+  border: 1px solid $font_color_base;
+  
+  transition: 0.3s;  // for hover
+}
+
+#venue .button-map:hover {
+  color: white;
+  background: $highlight_color;
+  border: 1px solid $bg_color_base;  // invisible
+}
+
+#venue img {
+  max-height: 750px;
+}

@@ -1,0 +1,159 @@
+// Welcome page
+#welcome {
+  height: 100vh;
+
+  align-items: center;  // vert
+  padding: 0;  // override section
+
+  background-image: url('/static/img/village_watercolor_2550x1440.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative;  // for stick footer
+}
+
+.header-index {
+  text-align: center;
+  flex-basis: 100%;
+}
+
+// Text
+.header-index_title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 21rem; // always higher than font-size
+  overflow: hidden; // transition
+}
+
+.header-index_title h1 {
+  font-family: "Tangerine";
+  font-weight: 400;
+  font-size: 20rem;
+
+  color: white;
+
+  -webkit-animation: slideUp 0.5s cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation: slideUp 0.5s cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation-delay: 250ms;
+}
+
+.header-index div:nth-last-child(2) h1 {
+  animation-delay: 350ms;
+}
+
+// Date
+.header-index_subtitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  height: 5rem;  // must be bigger than font-size
+  overflow: hidden;  // transition
+
+  margin-top: 2vw;
+}
+
+.header-index_subtitle h2 {
+  font-weight: 200;
+  font-size: 4rem;
+  color: white;
+
+  -webkit-animation: slideDown 500ms cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation: slideDown 500ms cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation-delay: 1s;
+}
+
+// Heart
+.heart {
+  color: #e63946; // Brighter Red
+  // color: #BE513D; // Cedar Chest
+  // color: #BC4B51; // dark red
+  font-size: 8rem;
+
+  -webkit-animation: growIn 1s cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation: growIn 500ms cubic-bezier(0.52, 0.12, 0.46, 1.1) backwards;
+  animation-delay: 1s;
+
+  padding: 0 3vw;
+}
+
+// Scroll Down Blinker
+#scrolltip {
+  position: absolute;
+  bottom: 5px;
+  left: 0; 
+  right: 0; 
+
+  margin-left: auto; 
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  -webkit-animation: fadeIn 1s ease-in backwards;
+  animation: fadeIn 1s ease-in backwards;
+  animation-delay: 2.5s;
+}
+
+#scrolltip span {
+  font-size: 1.2rem;
+  color: black;
+}
+
+#scrolltip span:not(.blink) {
+  font-family: "Montserrat", Helvetica, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+// Grass
+// .grass-container {
+//   position: absolute;  // do not take space in page
+//   bottom: 0;
+//   left: 0;
+
+//   width: 100vw;
+//   height: 50px;
+//   overflow: hidden; // so that animations are mostly hidden.
+// }
+
+// .grass-container img {
+//   -webkit-animation: slideUp 500ms cubic-bezier(0.52, 0.12, 0.46, 1.1);
+//   animation: slideUp 500ms cubic-bezier(0.52, 0.12, 0.46, 1.1);
+//   animation-delay: 1.5s;
+//   animation-fill-mode: backwards;
+// }
+
+// Rabbits
+.header-rabbits {
+  position: absolute;  // do not take space in page
+  bottom: 0;
+  left: 0;
+
+  height: 35rem;
+  width: 35rem;
+
+  background-image: url('/static/img/rabbitz.png');
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 0 -15px 7px -7px $bg_color_base inset;
+
+  -webkit-animation: slideRight 1s cubic-bezier(0.52, 0.12, 0.46, 1.1);
+  animation: slideRight 1s cubic-bezier(0.52, 0.12, 0.46, 1.1);
+  animation-delay: 1.5s;
+  animation-fill-mode: backwards;
+}
+
+@media screen and (max-width: $mobile) {
+  .header-rabbits {
+    height: 15rem;
+    width: 15rem;
+  }
+}
