@@ -135,7 +135,7 @@ function submitForm(selected) {
         return;
     }
 
-    // RSVP Yes? Check Extra Fields (Hotel is only required)
+    // RSVP Yes? Check Extra Fields
     let rsvpSelector = document.querySelector(".js-form-rsvp.is_active");
     let rsvpYes = rsvpSelector.dataset.value == "yes"
 
@@ -144,6 +144,14 @@ function submitForm(selected) {
         return
     }
 
+    // Numbers of guests (adults only)
+    let adultsSelector = document.querySelector(".js-form-extra-guest-adults");
+    if (adultsSelector.value.length < 1 || parseInt(adultsSelector.value) < 1) {
+        adultsSelector.classList.add("wrong_input");
+        return
+    };
+
+    // Hotel Options
     let hotelOption;
     let hotelSelectors = document.querySelectorAll(".js-form-hotel");
     for (i = 0; i < hotelSelectors.length; i++) {
@@ -179,7 +187,7 @@ function submitForm(selected) {
 
     // Check minimum number of nights
     let numNights = document.querySelector(".js-form-hotel-nights");
-    if (parseInt(numNights.value) < 2) {
+    if (numNights.length < 1 || parseInt(numNights.value) < 2) {
         numNights.classList.add("wrong_input");
         return
     };
@@ -213,6 +221,8 @@ function postFormData() {
         CheckinDate: document.querySelector(".js-form-hotel-checkin").value,
     };
     
+    return; // debug
+
     fetch('https://api.sheetmonkey.io/form/ev6A9uu1inqfwJgqKVQtut', {
         method: 'POST',
         headers: {

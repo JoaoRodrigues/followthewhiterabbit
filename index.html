@@ -230,18 +230,26 @@
           <button class="js-form-rsvp" data-value="no" onclick="selectRSVPOption(this);">Regretfully, I'll fold.</button>
         </div>
         <div class="js-form-rsvp-extras">
-          <h5>Additional Guests</h5>
-          <input class="js-form-extra-guest-names" type="text" placeholder="List names of others attending (comma separated)">
+
+          <h5>Number of Adults in Your Party</h5>
+          <input class="js-form-extra-guest-adults" type="text" placeholder="">
+          <h5>Number of Children in Your Party</h5>
+          <input class="js-form-extra-guest-children" type="text" placeholder="">
+          <h5>Additional Guests in Your Party</h5>
+          <input class="js-form-extra-guest-names" type="text" placeholder="List names of others in your party (comma separated)">          
+
           <h5>Dietary Restrictions</h5>
           <input class="js-form-extra-diet" type="text" placeholder="List any dietary restrictions">
+          
           <h5>Do you want to stay at the Palacio with us?</h5>
           <div class="js-form-hotel-option">
             <button class="js-form-hotel" data-value="yes" onclick="selectHotelOption(this);">Yes!</button>
             <button class="js-form-hotel" data-value="no" onclick="selectHotelOption(this);">Nope</button>
           </div>
+          
           <div class="js-form-hotel-extras">
             <h5>How many nights do you want to book?<sup>*</sup></h5>
-            <input class="js-form-hotel-nights" type="text" placeholder="e.g. 3 nights">
+            <input class="js-form-hotel-nights" type="text" placeholder="e.g. 3">
             <span>
               <sup>*</sup>2 nights minimum; if you wish to 3+ nights, regular hotel rates
               apply after the 3rd night.
