@@ -100,7 +100,7 @@ main {
   min-height: 100vh;
   color: #11223F;
   background: #ececec;
-  background-image: url("/static/img/white_wall_hash.webp");
+  background-image: url("../img/white_wall_hash.webp");
   background-repeat: repeat;
 }
 
@@ -205,7 +205,7 @@ body {
   height: 100vh;
   align-items: center;
   padding: 0;
-  background-image: url("/static/img/village_watercolor_2550x1440.webp");
+  background-image: url("../img/village_watercolor_2550x1440.webp");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -300,7 +300,7 @@ body {
   left: 0;
   height: 35rem;
   width: 35rem;
-  background-image: url("/static/img/rabbitz.png");
+  background-image: url("static/img/rabbitz.png");
   background-position: bottom left;
   background-repeat: no-repeat;
   background-size: contain;
