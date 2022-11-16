@@ -164,6 +164,14 @@ body {
   margin-bottom: 1rem;
 }
 
+a {
+  text-decoration-color: lightgrey;
+}
+
+a:hover {
+  text-decoration-color: lightgrey;
+}
+
 span {
   line-height: 1.6;
 }
@@ -630,11 +638,9 @@ span {
 }
 #activities a {
   color: #11223F;
-  text-decoration-color: lightgrey;
 }
 #activities a:hover {
   color: #F4A259;
-  text-decoration-color: lightgrey;
 }
 
 @media screen and (max-width: 736px) {
