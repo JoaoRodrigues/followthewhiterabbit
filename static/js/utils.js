@@ -56,7 +56,6 @@ function createLoadInObserver() {
     function callback(entries) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                console.log(entry.isIntersecting)
                 entry.target.classList.add('loaded');
             }
         });
