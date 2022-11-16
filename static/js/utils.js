@@ -48,7 +48,7 @@ const elementsToLoadIn = document.querySelectorAll("section:not([id^='welcome'])
 elementsToLoadIn.forEach((el) => { el.classList.add('loadin'); });
 
 function createLoadInObserver() {
-    let threshold = window.innerWidth > 768 ? 0.3 : 0.1;
+    let threshold = window.innerWidth > 850 ? 0.3 : 0.1;
     let options = {
         root: null,
         rootMargin: '0px',
