@@ -592,6 +592,11 @@ span {
     max-width: unset;
   }
 }
+@media screen and (max-width: 736px) {
+  #travel_lodging .square-text-container {
+    max-width: unset;
+  }
+}
 #activities {
   padding: 0;
   margin: 0 10vw;

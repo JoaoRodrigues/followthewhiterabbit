@@ -78,3 +78,11 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile) {
+  #travel_lodging {
+    .square-text-container {
+      max-width: unset;
+    }
+  }
+}
