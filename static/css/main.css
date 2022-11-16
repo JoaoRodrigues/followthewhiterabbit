@@ -232,7 +232,7 @@ span {
   padding: 0;
   background-image: url("../img/village_watercolor_2550x1440.webp");
   background-repeat: no-repeat;
-  background-size: auto 90vh;
+  background-size: auto 95vh;
   background-position: center;
   position: relative;
 }
@@ -630,9 +630,11 @@ span {
 }
 #activities a {
   color: #11223F;
+  text-decoration-color: lightgrey;
 }
 #activities a:hover {
   color: #F4A259;
+  text-decoration-color: lightgrey;
 }
 
 @media screen and (max-width: 736px) {
