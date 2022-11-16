@@ -1,29 +1,12 @@
 #travel_lodging {
-    padding: 0;
-    margin: 0 10vw;
-    max-width: 90vw;
 
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-start;
+  column-gap: 2vw;
+  align-items: stretch;
 
-    column-gap: 2vw;
-
-}
-
-@media screen and (max-width: $mobile) {
-  #travel_lodging {
-    row-gap: 5vw;
-  }
-}
-
-#travel_lodging {
   .square-text-container {
     flex: 1;
-    // Set a minimum width to allow items to pack on a full screen
-    min-width: 30vw; // roughly (90-(10*2)-(2*2)) / 2
-    max-width: 20vw;
+    min-width: 30vw;
+    max-width: 40vw;
 
     padding: 4rem;
 
@@ -43,12 +26,6 @@
     margin-bottom: 5rem;
   }
 
-  .square-text-container span {
-    font-size: 2.5rem;
-    font-weight: 100; 
-    line-height: 1.6;
-  }
-
   .square-text-container a {
     color: $font_color_base;
   }
@@ -58,16 +35,46 @@
   }
 
   .postscript {
+    flex-basis: 100%;
     margin-top: 5rem;
-    max-width: 25vw;
+    text-align: center;
+  }
 
+  .postscript span {
+    display: inline-block;
+
+    max-width: 25%;
     font-size: 2.2rem;
-    font-weight: 100; 
     line-height: 1.4;
     
     text-align: center;
 
     padding: 4rem;
     border: 1px solid $highlight_color;
+  }
+}
+
+
+@media screen and (max-width: $tablet) {
+  #travel_lodging {
+    row-gap: 5vw;
+
+    .square-text-container {
+      flex-basis: 100%;
+      min-width: unset;
+      padding: 0;
+    }
+
+    .square-text-container h2 {
+      font-size: 5rem;
+    }
+
+    .square-text-container span {
+      font-size: 2.3rem;
+    }
+
+    .postscript span {
+      max-width: unset;
+    }
   }
 }

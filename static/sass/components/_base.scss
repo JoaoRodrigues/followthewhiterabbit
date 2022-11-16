@@ -36,13 +36,19 @@ section {
   align-items: center;  // vert
   justify-content: center; // horz
 
-  padding-right: $hmargin;
-  padding-left: $hmargin;
+  padding-right: $hpadding;
+  padding-left: $hpadding;
 }
 
-.spacer { height: 15vh; }
+.spacer { height: 20vh; }
 
 .spacer.small { height: 10vh; }
+
+@media screen and (max-width: $mobile) {
+  .spacer { height: 15vh; }
+
+  .spacer.small { height: 7.5vh; }
+}
 
 .underlined::after {
   content: '';
@@ -52,9 +58,15 @@ section {
   width: 10vw;
 }
 
+@media screen and (max-width: $mobile) {
+  .underlined::after {
+    width: 20vw;
+  }
+}
+
 // Typography
 html {
-  font-size: 62.5%;  // default: ~10px
+  font-size: 10px;  // default
 }
 
 body {
@@ -70,13 +82,17 @@ body {
 .section-header {
   flex-basis: 100%;
 
-  font-size: 4rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
 
   text-align: center;
+
   margin-bottom: 1rem;
+}
+
+span {
+  line-height: 1.6;
 }
 
 // Media Queries
@@ -85,32 +101,43 @@ body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
+  }
+  span {
+    font-size: 3rem;
   }
 }
+
 @media screen and (max-width: $tablet) {
   body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 2.1rem;
+    font-size: 3.8rem;
   }
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+  }
+  span {
+    font-size: 2.8rem;
   }
 }
+
 @media screen and (max-width: $mobile) {
   body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 2.1rem;
+    font-size: 3.5rem;
   }
   h2 {
     font-size: 1.8rem;
+  }
+  span {
+    font-size: 2.3rem;
   }
 }
 

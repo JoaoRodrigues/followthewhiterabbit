@@ -3,6 +3,23 @@
   width: 25vw;
 }
 
+@media screen and (max-width: $mobile) {
+  .js-form {
+    width: 100%;
+  }
+}
+
+.deadline {
+  flex-basis: 100%;
+  
+  font-weight: 100;
+
+  text-align: center;
+  text-transform: uppercase;
+
+  margin-bottom: 5rem;
+}
+
 .js-form h5 {
   margin: 4rem 0 2rem;
 
@@ -21,7 +38,18 @@
   padding: 2rem;
 }
 
+.js-form-rsvp-option,
+.js-form-hotel-option {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%
+}
+
 .js-form button {
+  flex: 1;
+
   display: inline-block;
   box-sizing: border-box;
 

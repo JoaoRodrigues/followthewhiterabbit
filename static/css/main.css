@@ -110,18 +110,26 @@ section {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding-right: 5vw;
-  padding-left: 5vw;
+  padding-right: 10vw;
+  padding-left: 10vw;
 }
 
 .spacer {
-  height: 15vh;
+  height: 20vh;
 }
 
 .spacer.small {
   height: 10vh;
 }
 
+@media screen and (max-width: 736px) {
+  .spacer {
+    height: 15vh;
+  }
+  .spacer.small {
+    height: 7.5vh;
+  }
+}
 .underlined::after {
   content: "";
   display: block;
@@ -130,8 +138,13 @@ section {
   width: 10vw;
 }
 
+@media screen and (max-width: 736px) {
+  .underlined::after {
+    width: 20vw;
+  }
+}
 html {
-  font-size: 62.5%;
+  font-size: 10px;
 }
 
 body {
@@ -144,7 +157,6 @@ body {
 
 .section-header {
   flex-basis: 100%;
-  font-size: 4rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
@@ -152,15 +164,22 @@ body {
   margin-bottom: 1rem;
 }
 
+span {
+  line-height: 1.6;
+}
+
 @media screen and (min-width: 1280px) {
   body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   h2 {
-    font-size: 3.5rem;
+    font-size: 2rem;
+  }
+  span {
+    font-size: 3rem;
   }
 }
 @media screen and (max-width: 1280px) {
@@ -168,10 +187,13 @@ body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 2.1rem;
+    font-size: 3.8rem;
   }
   h2 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
+  }
+  span {
+    font-size: 2.8rem;
   }
 }
 @media screen and (max-width: 736px) {
@@ -179,10 +201,13 @@ body {
     font-size: 1.6rem;
   }
   h1 {
-    font-size: 2.1rem;
+    font-size: 3.5rem;
   }
   h2 {
     font-size: 1.8rem;
+  }
+  span {
+    font-size: 2.3rem;
   }
 }
 @media screen and (max-width: 736px) {
@@ -322,10 +347,10 @@ body {
   margin: 0 30vw;
   display: flex;
   flex-direction: row;
+  text-align: left;
 }
 
 #intro-blurb h2 {
-  font-size: 2rem;
   font-weight: 400;
   text-align: center;
   text-transform: uppercase;
@@ -333,16 +358,15 @@ body {
   margin-bottom: 2rem;
 }
 
-#intro-blurb span {
-  font-size: 3rem;
-  font-weight: 100;
-  line-height: 1.6;
-  text-align: left;
+@media screen and (max-width: 1280px) {
+  #intro-blurb {
+    margin: 0 10vw;
+  }
+  #intro-blurb span {
+    text-align: center;
+  }
 }
-
 #venue {
-  padding: 0;
-  margin: 0 10vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -357,13 +381,6 @@ body {
   justify-content: flex-start;
   margin-top: 5vh;
   max-width: 50%;
-}
-
-#venue span {
-  font-size: 3rem;
-  font-weight: 100;
-  line-height: 1.6;
-  text-align: left;
 }
 
 .venue-text span:not(:first-child) {
@@ -390,29 +407,45 @@ body {
   border: 1px solid #ececec;
 }
 
-#venue img {
-  max-height: 750px;
+.venue-image {
+  width: 50%;
+  margin: 0 auto;
 }
 
-#event {
-  padding: 0;
-  margin: 0 10vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: inherit;
-  column-gap: 2vw;
-  max-width: 90vw;
+.venue-image img {
+  width: 75%;
 }
 
-@media screen and (max-width: 736px) {
-  #event {
-    row-gap: 5vw;
+@media screen and (max-width: 1280px) {
+  #venue h1 {
+    order: 1;
   }
+  .venue-text {
+    margin-top: 2.5vh;
+    max-width: unset;
+    order: 3;
+  }
+  .venue-text span {
+    text-align: center;
+  }
+  .venue-text .button-map {
+    margin: 2rem auto;
+  }
+  .venue-image {
+    order: 2;
+    width: 100%;
+  }
+  .venue-image img {
+    width: 100%;
+  }
+}
+#event {
+  column-gap: 1vw;
+  align-items: stretch;
 }
 #event .square-text-container {
   flex: 1;
-  min-width: 22vw;
+  max-width: 30vw;
   text-align: center;
   border: 1px solid #F4A259;
   padding: 2rem;
@@ -421,52 +454,91 @@ body {
   max-width: 100%;
 }
 #event .square-text-container h1 {
-  font-size: 4rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
+  font-size: 3.5rem;
+  font-weight: 200;
+  margin-bottom: 1rem;
 }
-#event .square-text-container h2 {
+#event .square-text-container .subheader {
+  display: block;
   font-size: 2.5rem;
   font-weight: 200;
   color: #F4A259;
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+}
+#event .square-text-container .subheader sup {
+  text-transform: lowercase;
 }
 #event .square-text-container span {
-  font-size: 2.5rem;
-  font-weight: 100;
+  font-size: 2.8rem;
   line-height: 1.4;
-  text-align: left;
 }
 #event .postscript {
   margin-top: 5rem;
-  max-width: 25vw;
   font-size: 2.5rem;
-  font-weight: 100;
   line-height: 1.4;
   text-align: center;
 }
-
-#travel_lodging {
-  padding: 0;
-  margin: 0 10vw;
-  max-width: 90vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  column-gap: 2vw;
+#event .fa-star {
+  font-size: 1rem;
+  animation: glitter 2s linear 0s infinite normal;
+  -webkit-animation: glitter 2s linear 0s infinite normal;
 }
 
-@media screen and (max-width: 736px) {
-  #travel_lodging {
-    row-gap: 5vw;
+@media screen and (max-width: 1280px) {
+  #event {
+    display: flex;
+    flex-direction: column;
+    column-gap: unset;
+    row-gap: 2.5vh;
   }
+  #event .square-text-container {
+    max-width: 90vw;
+  }
+}
+@media screen and (max-width: 736px) {
+  #event .square-text-container h1 {
+    font-size: 3rem;
+  }
+  #event .square-text-container span {
+    font-size: 2rem;
+  }
+}
+@keyframes glitter {
+  0% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+    color: #cdb4db;
+  }
+  25% {
+    transform: scale(0.5) rotate(90deg);
+    opacity: 0;
+    color: #ffc8dd;
+  }
+  50% {
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+    color: #ffafcc;
+  }
+  75% {
+    transform: scale(0.5) rotate(270deg);
+    opacity: 0;
+    color: #bde0fe;
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
+    color: #a2d2ff;
+  }
+}
+#travel_lodging {
+  column-gap: 2vw;
+  align-items: stretch;
 }
 #travel_lodging .square-text-container {
   flex: 1;
   min-width: 30vw;
-  max-width: 20vw;
+  max-width: 40vw;
   padding: 4rem;
   display: flex;
   flex-direction: row;
@@ -480,11 +552,6 @@ body {
   text-align: center;
   margin-bottom: 5rem;
 }
-#travel_lodging .square-text-container span {
-  font-size: 2.5rem;
-  font-weight: 100;
-  line-height: 1.6;
-}
 #travel_lodging .square-text-container a {
   color: #11223F;
 }
@@ -492,16 +559,39 @@ body {
   color: #F4A259;
 }
 #travel_lodging .postscript {
+  flex-basis: 100%;
   margin-top: 5rem;
-  max-width: 25vw;
+  text-align: center;
+}
+#travel_lodging .postscript span {
+  display: inline-block;
+  max-width: 25%;
   font-size: 2.2rem;
-  font-weight: 100;
   line-height: 1.4;
   text-align: center;
   padding: 4rem;
   border: 1px solid #F4A259;
 }
 
+@media screen and (max-width: 1280px) {
+  #travel_lodging {
+    row-gap: 5vw;
+  }
+  #travel_lodging .square-text-container {
+    flex-basis: 100%;
+    min-width: unset;
+    padding: 0;
+  }
+  #travel_lodging .square-text-container h2 {
+    font-size: 5rem;
+  }
+  #travel_lodging .square-text-container span {
+    font-size: 2.3rem;
+  }
+  #travel_lodging .postscript span {
+    max-width: unset;
+  }
+}
 #activities {
   padding: 0;
   margin: 0 10vw;
@@ -513,51 +603,57 @@ body {
   column-gap: 2vw;
 }
 
-@media screen and (max-width: 736px) {
-  #activities {
-    row-gap: 5vw;
-  }
-}
-#activities .square-text-container {
-  flex: 1;
-  min-width: 30vw;
-  max-width: 20vw;
-  padding: 4rem;
+#activities .list-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: flex-start;
 }
-#activities .square-text-container h2 {
+#activities h2 {
   flex-basis: 100%;
   font-size: 6rem;
   color: #11223F;
   text-align: left;
   margin-bottom: 5rem;
 }
-#activities .square-text-container li {
+#activities li {
   font-size: 2.5rem;
   font-weight: 100;
   line-height: 1.6;
 }
-#activities .square-text-container a {
+#activities li:not(:last-child) {
+  margin-bottom: 1rem;
+}
+#activities a {
   color: #11223F;
 }
-#activities .square-text-container a:hover {
+#activities a:hover {
   color: #F4A259;
 }
-#activities .postscript {
-  margin-top: 5rem;
-  max-width: 25vw;
-  font-size: 2rem;
-  font-weight: 100;
-  line-height: 1.4;
-  text-align: center;
-}
 
+@media screen and (max-width: 736px) {
+  #activities {
+    row-gap: 5vw;
+  }
+  #activities li {
+    font-size: 2rem;
+  }
+}
 .js-form {
   margin: 0 auto;
   width: 25vw;
+}
+
+@media screen and (max-width: 736px) {
+  .js-form {
+    width: 100%;
+  }
+}
+.deadline {
+  flex-basis: 100%;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
 }
 
 .js-form h5 {
@@ -576,7 +672,17 @@ body {
   padding: 2rem;
 }
 
+.js-form-rsvp-option,
+.js-form-hotel-option {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .js-form button {
+  flex: 1;
   display: inline-block;
   box-sizing: border-box;
   border: 1px solid #11223F;

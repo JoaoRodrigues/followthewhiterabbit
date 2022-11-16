@@ -27,6 +27,7 @@ function createWelcomeObserver() {
         for (i = 0; i < entries.length; i++) {
             entry = entries[i];
             opacity = Math.min(entry.intersectionRatio, 1.0) * 0.8;  // fade a little faster;
+            console.log(entry, entry.intersectionRatio, opacity)
 
             let elements = document.querySelectorAll('#scrolltip, .header-rabbits');
             elements.forEach((ele) => {

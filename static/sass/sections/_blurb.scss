@@ -4,21 +4,27 @@
 
   display: flex;
   flex-direction: row;
+
+  text-align: left;
 }
 
 #intro-blurb h2 {
-  font-size: 2rem;
   font-weight: 400;
+  
   text-align: center;
   text-transform: uppercase;
+  
   letter-spacing: 0.5rem;
+  
   margin-bottom: 2rem;
 }
 
-#intro-blurb span {
-  font-size: 3rem;
-  font-weight: 100; 
-  line-height: 1.6;
+@media screen and (max-width: $tablet) {
+  #intro-blurb {
+    margin: 0 10vw;
+  }
 
-  text-align: left;
+  #intro-blurb span {
+    text-align: center;
+  }
 }

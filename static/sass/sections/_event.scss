@@ -1,27 +1,11 @@
 #event {
-  padding: 0;
-  margin: 0 10vw;
 
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: inherit;
-  column-gap: 2vw;
+  column-gap: 1vw;
+  align-items: stretch;
 
-  max-width: 90vw;
-}
-
-@media screen and (max-width: $mobile) {
-  #event {
-    row-gap: 5vw;
-  }
-}
-
-#event {
   .square-text-container {
     flex: 1;
-    // Set a minimum width to allow items to pack on a full screen
-    min-width: 22vw; // roughly (90-(10*2)-(2*2)) / 3
+    max-width: 30vw;
 
     text-align: center; // center elements
 
@@ -34,37 +18,98 @@
   }
 
   .square-text-container h1 {
-    font-size: 4rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    font-weight: 200;
 
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
-  .square-text-container h2 {
+  .square-text-container .subheader {
+    display: block;
+
     font-size: 2.5rem;
     font-weight: 200;
     color: $highlight_color;
     text-transform: uppercase;
     
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+
+    sup {
+      text-transform: lowercase;
+    }
   }
 
   .square-text-container span {
-    font-size: 2.5rem;
-    font-weight: 100; 
+    font-size: 2.8rem;
     line-height: 1.4;
-
-    text-align: left;
   }
 
   .postscript {
     margin-top: 5rem;
-    max-width: 25vw;
 
     font-size: 2.5rem;
-    font-weight: 100; 
     line-height: 1.4;
-    
     text-align: center;
+  }
+
+  .fa-star {
+    font-size: 1rem;
+    animation: glitter 2s linear 0s infinite normal;
+    -webkit-animation: glitter 2s linear 0s infinite normal;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  #event {
+
+    display: flex;
+    flex-direction: column;
+    column-gap: unset;
+    row-gap: 2.5vh;
+  
+    .square-text-container {
+      max-width: 90vw;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile) {
+  #event {
+    .square-text-container h1 {
+      font-size: 3rem;
+    }
+
+    .square-text-container span {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Glitter!
+@keyframes glitter {
+  0% {
+    transform: scale(1.0) rotate(0deg);
+    opacity: 1;
+    color: #cdb4db;
+  }
+  25% {
+    transform: scale(0.5) rotate(90deg);
+    opacity: 0;
+    color: #ffc8dd;
+  }
+  50% {
+    transform: scale(1.0) rotate(180deg);
+    opacity: 1;
+    color: #ffafcc; // peach
+  }
+  75% {
+    transform: scale(0.5) rotate(270deg);
+    opacity: 0;
+    color: #bde0fe; // sand
+  }
+  100% {
+    transform: scale(1.0) rotate(360deg);
+    opacity: 1;
+    color: #a2d2ff;
   }
 }

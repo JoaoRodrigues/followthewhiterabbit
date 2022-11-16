@@ -1,7 +1,4 @@
 #venue {
-  padding: 0;
-  margin: 0 10vw;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,14 +15,6 @@
 
   margin-top: 5vh;
   max-width: 50%;
-}
-
-#venue span {
-  font-size: 3rem;
-  font-weight: 100; 
-  line-height: 1.6;
-
-  text-align: left;
 }
 
 .venue-text span:not(:first-child) {
@@ -57,6 +46,41 @@
   border: 1px solid $bg_color_base;  // invisible
 }
 
-#venue img {
-  max-height: 750px;
+.venue-image {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.venue-image img {
+  width: 75%;
+}
+
+@media screen and (max-width: $tablet) {
+  #venue h1 {
+    order: 1
+  }
+
+  .venue-text {
+    margin-top: 2.5vh;
+    max-width: unset;
+    order: 3;
+  }
+
+  .venue-text span {
+    text-align: center;
+  }
+
+
+  .venue-text .button-map {
+    margin: 2rem auto;
+  }
+
+  .venue-image {
+    order: 2;
+    width: 100%;
+  }
+
+  .venue-image img {
+    width: 100%;
+  }
 }
