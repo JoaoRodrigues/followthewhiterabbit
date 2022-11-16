@@ -27,7 +27,6 @@ function createWelcomeObserver() {
         for (i = 0; i < entries.length; i++) {
             entry = entries[i];
             opacity = Math.min(entry.intersectionRatio, 1.0) * 0.8;  // fade a little faster;
-            console.log(entry, entry.intersectionRatio, opacity)
 
             let elements = document.querySelectorAll('#scrolltip, .header-rabbits');
             elements.forEach((ele) => {
@@ -51,12 +50,13 @@ function createLoadInObserver() {
     let options = {
         root: null,
         rootMargin: '0px',
-        threshold: window.innerWidth > 850 ? 0.3 : 0.1,
+        threshold: 0.25,
     }
 
     function callback(entries) {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
+                console.log(entry.isIntersecting)
                 entry.target.classList.add('loaded');
             }
         });
