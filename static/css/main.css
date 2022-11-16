@@ -762,3 +762,22 @@ span {
   background-color: #4CAF50 !important;
   font-weight: 200 !important;
 }
+
+.footer-rabbits {
+  flex-basis: 100%;
+  margin-top: 5rem;
+  height: 15rem;
+  width: 15rem;
+  background-image: url("../img/rabbitz.png");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-shadow: 0 -15px 7px -7px #ececec inset;
+}
+
+@media screen and (max-width: 736px) {
+  .footer-rabbits {
+    height: 5rem;
+    width: 5rem;
+  }
+}
